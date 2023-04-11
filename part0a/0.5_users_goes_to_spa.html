@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+
+<body>
+    <div class="mermaid">
+        sequenceDiagram
+        participant browser
+        participant server
+
+        browser->>server:GET https://studies.cs.helsinki.fi/exampleapp/spa
+        activate server
+        server-->>browser: Returns an HTML Document is rendered to the browser with a list of notes and a form
+        deactivate server
+
+        browser->>server:GET https://studies.cs.helsinki.fi/exampleapp/main.css
+        activate server
+        server-->>browser: The main css file with a content type text/css
+        deactivate server
+
+        browser->>server:GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+        activate server
+        server-->>browser: The javascript file to handle two actions, making a post and get request where necessary
+        deactivate server
+
+        Note right of browser: The file has POST and GET requests accordingly and a function to render notes
+
+
+        browser->>server:GET https://studies.cs.helsinki.fi/exampleapp/data.json
+        activate server
+        server-->>browser: The json file that contains the list of notes
+        deactivate server
+
+
+
+
+
+
+    </div>
+
+</body>
+
+
+</html>

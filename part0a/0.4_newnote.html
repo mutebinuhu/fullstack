@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+
+<body>
+    <div class="mermaid">
+        sequenceDiagram
+        participant browser
+        participant server
+
+        browser->>server:POST https://studies.cs.helsinki.fi/exampleapp/new_note
+        activate server
+        server-->>browser: Response of the new note created
+        deactivate server
+
+        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+        activate server
+        server-->>browser: HTML document with updated notes list
+        deactivate server
+
+        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+        activate server
+        server-->>browser: main css file
+        deactivate server
+
+        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+        activate server
+        server-->>browser: javascript file
+        deactivate server
+
+        Note right of browser: The main.js file is called that executes a function that calls a json file
+
+        browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+        activate server
+        server-->>browser: JSON file
+        deactivate server
+
+        Note right of browser: The data.json file contains the updated list of notes that are rendered in the UI
+
+
+
+
+    </div>
+
+</body>
+
+
+</html>

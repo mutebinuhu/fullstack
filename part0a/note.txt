@@ -1,0 +1,2 @@
+Note: i have use the mermaid syntax and the files can viewed as HTML documents and have embedded the "'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"
+in the header
