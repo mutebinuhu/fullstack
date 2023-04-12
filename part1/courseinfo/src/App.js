@@ -5,13 +5,7 @@ const Header = (props) =>{
     </>
   )
 }
-const Content = (props) =>{
-  return(
-    <>
-      <p>{props.part1} {props.exercise}</p>
-    </>
-  )
-}
+
 const App = () => {
   const course = 'Half Stack application development'
   const part1 = 'Fundamentals of React'
